@@ -1,0 +1,33 @@
+﻿@{
+    ViewData["Title"] = "Trang chủ";
+    var latestProducts = new List<string> {
+        "Nồi cơm điện cao tần Nagakawa NAG0102",
+        "Nồi cơm điện cao tần Nagakawa NAG0102",
+        "Nồi cơm điện cao tần Nagakawa NAG0102"
+    };
+}
+
+<!-- SẢN PHẨM MỚI NHẤT (LOAD TỪ VIEW ACTION) -->
+<div class="card border-primary">
+    <div class="card-header bg-primary text-white fw-bold">
+        Sản phẩm mới nhất
+    </div>
+    <div class="card-body">
+        <div class="row">
+            @foreach (var item in latestProducts)
+            {
+                <div class="col-md-4 mb-3">
+                    <div class="card h-100 text-center p-2">
+                        <img src="~/images/noicom.jpg" class="card-img-top mx-auto img-fluid" alt="@item" style="max-height: 150px; object-fit: contain;">
+                        <div class="card-body p-2 d-flex align-items-center justify-content-center">
+                            <p class="card-text fw-semibold text-dark mb-0">@item</p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+<!-- SẢN PHẨM HOT (LOAD TỪ VIEW COMPONENT) -->
+@await Component.InvokeAsync("HotProduct")

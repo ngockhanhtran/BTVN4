@@ -1,0 +1,20 @@
+﻿@{
+    var categories = new List<string> {
+        "Áo dài", "Áo đông", "Túi xách", "Đồng hồ",
+        "Ví da", "Thắt lưng da", "Tủ lạnh", "Tivi", "Quạt điện", "Lò sưởi"
+    };
+}
+
+<div class="card border-primary">
+    <div class="card-header bg-primary text-white fw-bold">
+        Danh mục sản phẩm
+    </div>
+    <ul class="list-group list-group-flush">
+        @foreach (var item in categories)
+        {
+            <li class="list-group-item">
+                <a href="#" class="text-decoration-none text-dark">@item</a>
+            </li>
+        }
+    </ul>
+</div>
